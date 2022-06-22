@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <progress value="0" max="60" id="progressBar"></progress>
+            <p id="num"></p>
+            <div class="tenor-gif-embed rocket" data-postid="23600743" data-share-method="host" data-aspect-ratio="1.20301" data-width="100%">
+
+                <a href="https://tenor.com/view/smict-gif-23600743">Smict Sticker</a>from <a href="https://tenor.com/search/smict-stickers">Smict Stickers</a></div>
+            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        </div>
+    </div>
+    <script>
+        var timeleft = 60;
+        let progressBar = document.getElementById("progressBar")
+        let timeCount = document.getElementById("num")
+        let rocket = document.querySelector(".rocket")
+        var downloadTimer = setInterval(function() {
+            if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+            }
+
+            progressBar.value = 60 - timeleft;
+            timeCount.innerText = 60 - timeleft;
+            timeleft -= 1;
+            if (timeCount.innerText == 60) {
+                console.log(timeCount);
+                progressBar.style.display = "none";
+                timeCount.innerText = "We are done counting!!!"
+                rocket.classList.remove('rocket')
+                rocket.classList.add('newRocket')
+            }
+        }, 1000);
+    </script>
+
+</html>

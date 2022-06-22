@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 2rem;
+    scroll-behavior: smooth;
+}
+
+.rocket {
+    display: none;
+}
+
+.newRocket {
+    /* width: 400px;
+    height: 400px; */
+    display: block;
+}
